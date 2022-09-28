@@ -1,0 +1,126 @@
+.banner {
+  text-align: center;
+}
+
+.body {
+  z-index: 1;
+  padding-top: 80px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Popup Styles */
+
+#exit-btn {
+  float: right;
+  width: 30px;
+  height: 30px;
+}
+
+.top-popup {
+  padding-top: 10px;
+}
+
+.skin-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 400px;
+  border: 1px solid rgb(7, 17, 26);
+  /* box-shadow: 0px 8px 32px 8px rgba(0, 0, 0, 0.35); */
+}
+
+.popup {
+  z-index: 5;
+  width: 80%;
+  height: 80%;
+  border: 1px solid rgb(7, 17, 26);
+  background: #1d1f24;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  text-align: center;
+  position: fixed;
+  /* box-shadow: 0px 8px 32px 8px rgba(0, 0, 0, 0.35); */
+}
+
+.popup h1 {
+  color: aliceblue;
+  height: 100%;
+}
+
+.popup span {
+  color: aliceblue;
+}
+
+.popup img {
+  max-width: fit-content;
+}
+
+.item-section {
+  border: 1px solid rgb(7, 17, 26);
+  display: flex;
+  flex-direction: column;
+  /* float: left; */
+  text-align: left;
+  padding: 12px;
+  height: 135px;
+  /* box-shadow: 0px 8px 32px 8px rgba(0, 0, 0, 0.35); */
+}
+
+.item-section span {
+  font-size: 20px;
+}
+
+.sub-title {
+  display: flex;
+}
+
+.popup-right {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(7, 17, 26);
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  justify-content: space-between;
+  /* box-shadow: 0px 8px 32px 8px rgba(0, 0, 0, 0.35); */
+}
+
+.popup-right span {
+  font-size: 18px;
+}
+
+#price {
+  font-size: 30px;
+}
+
+.banner img {
+  box-shadow: 0px 8px 32px 8px rgba(0, 0, 0, 0.35);
+}
+
+#add-to-cart-btn {
+  height: 100px;
+  display: inline-block;
+  outline: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 15px 22px;
+  font-size: 22px;
+  height: 50px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  line-height: normal;
+  background: linear-gradient(90deg, #5522fa 0, #0074e4 100%);
+  border-radius: 50px;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#add-to-cart-btn:hover {
+  box-shadow: 0 0 0 0.15rem #5ceace;
+}

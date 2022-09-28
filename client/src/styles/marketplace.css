@@ -1,0 +1,22 @@
+.marketplace {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.marketplace h2 {
+  align-self: center;
+  text-align: center;
+  color: white;
+  margin: 35px;
+  font-size: 2.2rem;
+}
+
+
+
+.display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

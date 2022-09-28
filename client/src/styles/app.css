@@ -1,0 +1,10 @@
+.App {
+  font-family: "Montserrat", sans-serif;
+  background-color: #2a2e3a;
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

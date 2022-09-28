@@ -1,0 +1,42 @@
+.navbar {
+  /* margin: 0 5% 0; */
+  align-items: center;
+  background: #1d1f24;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 8px 32px 8px rgba(0, 0, 0, 0.35);
+  border-bottom: #202035 2px solid;
+}
+
+.nav-ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 5% 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-ul input {
+  all: unset;
+  color: aliceblue;
+}
+
+#search-bar {
+  width: 40%;
+  height: 30px;
+  background-color: #1d1f24;
+}
+
+.navbar a {
+  color: aliceblue;
+}
+
+#search {
+  color: aliceblue;
+  filter: brightness(0) saturate(100%) invert(99%) sepia(8%) saturate(4%)
+    hue-rotate(145deg) brightness(116%) contrast(100%);
+  width: 18px;
+}
