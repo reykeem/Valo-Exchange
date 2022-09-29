@@ -2,7 +2,9 @@ import React from "react";
 import "../styles/navbar.css";
 import search from "../assets/search.png";
 
-function Navbar() {
+function Navbar(props) {
+  const { handleLoginClick } = props;
+
   return (
     <nav className="navbar">
       <ul className="nav-ul">
@@ -21,7 +23,9 @@ function Navbar() {
           <a href="#">Rewards</a>
         </li>
         <li>
-          <a href="#">Log In</a>
+          <a href="#" onClick={() => handleLoginClick()}>
+            Log In
+          </a>
         </li>
         <li>
           <a href="#">Sign Up</a>
