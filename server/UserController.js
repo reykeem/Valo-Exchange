@@ -2,6 +2,7 @@ const User = require("./usersModel");
 
 const UserController = {
   createUser(req, res) {
+    console.log("req.body:", req.body);
     User.create(req.body)
       .then((data) => {
         console.log(data);
@@ -14,8 +15,7 @@ const UserController = {
   getUser(req, res) {
     User.findOne({ username: req.params.username })
       .then((data) => {
-        if (data === null) res.send(400);
-        res.send(data);
+        res.json(data);
       })
       .catch((err) => {
         console.log(`ERROR: ${err} in userController.getUser`);
@@ -30,7 +30,7 @@ const UserController = {
       }
     )
       .then((data) => {
-        res.status(200).send("Updated User");
+        res.status(200).json("Updated User");
       })
       .catch((err) => {
         console.log(`ERROR: ${err} in userController.updateUser`);
@@ -43,6 +43,21 @@ const UserController = {
       })
       .catch((err) => {
         console.log(`ERROR: ${err} in userController.deleteUser`);
+      });
+  },
+  verifyUser(req, res) {
+    User.findOne({ username: req.body.username })
+      .then((data) => {
+        if (data.password === req.body.password) {
+          console.log("Logged In");
+          res.json("Successful Log In");
+        } else {
+          console.log("Incorrect Username/Password");
+          res.json("Incorrect Username/Password");
+        }
+      })
+      .catch((err) => {
+        console.log(`ERROR: ${err} in userController.verifyUser`);
       });
   },
 };

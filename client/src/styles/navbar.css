@@ -40,3 +40,12 @@
     hue-rotate(145deg) brightness(116%) contrast(100%);
   width: 18px;
 }
+
+.log-in {
+  display: flex;
+  justify-content: space-between;
+}
+
+#login-link {
+  margin-right: 20px;
+}

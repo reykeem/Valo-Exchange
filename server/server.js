@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 // const users = require("./routers/user");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
 const userController = require("./UserController");
 
@@ -21,14 +22,21 @@ app.use(express.static("../client/dist"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(cookieParser());
+
+/* Sign Up Routes */
+
 // Create a user
-app.post("/", userController.createUser);
+app.post("/signup", userController.createUser);
 // Get a user data
 app.get("/:username", userController.getUser);
 // Put/patch info on a user
 app.put("/:username", userController.updateUser);
 // Delete a user
 app.delete("/:username", userController.deleteUser);
+
+/* Log In Routes */
+app.post("/login", userController.verifyUser);
 
 /**
  * 404 handler

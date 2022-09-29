@@ -139,4 +139,37 @@ a {
   text-align: center;
   position: fixed;
   /* box-shadow: 0px 8px 32px 8px rgba(0, 0, 0, 0.35); */
+  color: aliceblue;
+}
+
+.user-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#login-btn {
+  width: 180px;
+  height: 80px;
+}
+
+/* SignUp Popup Styles */
+
+.signup {
+  z-index: 5;
+  width: 80%;
+  height: 80%;
+  border: 1px solid rgb(7, 17, 26);
+  background: #1d1f24;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  text-align: center;
+  position: fixed;
+  color: aliceblue;
+}
+
+#signup-btn {
+  width: 180px;
+  height: 80px;
 }

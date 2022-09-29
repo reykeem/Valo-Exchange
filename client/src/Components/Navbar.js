@@ -3,7 +3,7 @@ import "../styles/navbar.css";
 import search from "../assets/search.png";
 
 function Navbar(props) {
-  const { handleLoginClick } = props;
+  const { handleLoginClick, handleSignupClick, handleLoggedIn } = props;
 
   return (
     <nav className="navbar">
@@ -23,12 +23,14 @@ function Navbar(props) {
           <a href="#">Rewards</a>
         </li>
         <li>
-          <a href="#" onClick={() => handleLoginClick()}>
-            Log In
-          </a>
-        </li>
-        <li>
-          <a href="#">Sign Up</a>
+          <div className="log-in">
+            <a href="#" onClick={() => handleLoginClick()} id="login-link">
+              Log In
+            </a>
+            <a href="#" onClick={() => handleSignupClick()} id="signup-link">
+              Sign Up
+            </a>
+          </div>
         </li>
       </ul>
     </nav>
