@@ -7,14 +7,14 @@ function Signup(props) {
   const [newPassword, setNewPassword] = useState("");
 
   const handleSignup = () => {
-    console.log("newUsername: ", newUsername);
-    console.log("newPassword: ", newPassword);
+    console.log("newUsername: ", JSON.stringify(newUsername));
+    console.log("newPassword: ", JSON.stringify(newPassword));
     fetch("http://localhost:3000/signup", {
       method: "POST",
       mode: "no-cors",
       headers: {
         Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
       },
       body: JSON.stringify({ username: newUsername, password: newPassword }),
     })
@@ -25,27 +25,33 @@ function Signup(props) {
 
   return (
     <div className="signup">
-      <button onClick={() => closePopup()}>x</button>
-      <span>Create your account</span>
-      <span>
-        Username:{" "}
-        <input
-          onChange={(e) => setNewUsername(e.target.value)}
-          type="text"
-          id="username"
-        />
-      </span>
-      <span>
-        Password:{" "}
-        <input
-          onChange={(e) => setNewPassword(e.target.value)}
-          type="text"
-          id="password"
-        />
-      </span>
-      <button onClick={() => handleSignup()} id="signup-btn">
-        Sign Up
+      <span id="welcome">Create your account</span>
+      <button id="exit-btn" onClick={() => closePopup()}>
+        x
       </button>
+      <div id="user-inputs">
+        <span>
+          Username:{" "}
+          <input
+            onChange={(e) => setNewUsername(e.target.value)}
+            type="text"
+            id="username"
+            value={newUsername}
+          />
+        </span>
+        <span>
+          Password:{" "}
+          <input
+            onChange={(e) => setNewPassword(e.target.value)}
+            type="text"
+            id="password"
+            value={newPassword}
+          />
+        </span>
+        <button onClick={() => handleSignup()} id="login-btn">
+          Sign Up
+        </button>
+      </div>
     </div>
   );
 }

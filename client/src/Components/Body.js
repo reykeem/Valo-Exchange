@@ -48,7 +48,8 @@ function Body() {
 
   // useEffect hook to rerender on popup state change
   useEffect(() => {
-    // console.log(loginToggle);
+    // if cookie exists flip the switch to make the Welcome tab persist
+    if (document.cookie) setLoggedIn(true);
   }, [popup, skinDetails, loginToggle, signupToggle, loggedIn]);
 
   const handleLoginClick = () => {
@@ -61,6 +62,7 @@ function Body() {
 
   const handleLoggedIn = () => {
     setLoggedIn(true);
+    // console.log(user);
   };
 
   return (
@@ -68,7 +70,8 @@ function Body() {
       <Navbar
         handleLoginClick={handleLoginClick}
         handleSignupClick={handleSignupClick}
-        handleLoggedIn={handleLoggedIn}
+        // handleLoggedIn={handleLoggedIn}
+        isLoggedIn={loggedIn}
       />
       <div style={displayBody()} className="body">
         <div className="banner">
@@ -80,7 +83,11 @@ function Body() {
         <Marketplace popupHandler={popupHandler} />
       </div>
       {popup ? <Popup closePopup={closePopup} details={skinDetails} /> : ""}
-      {loginToggle ? <Login closePopup={closePopup} /> : ""}
+      {loginToggle ? (
+        <Login loggedInToggle={handleLoggedIn} closePopup={closePopup} isLoggedIn={loggedIn} />
+      ) : (
+        ""
+      )}
       {signupToggle ? <Signup closePopup={closePopup} /> : ""}
     </>
   );

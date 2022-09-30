@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ItemPreview from "./ItemPreview";
 import "../styles/marketplace.css";
+import refresh from "../assets/refresh.png";
 
 function Marketplace(props) {
   // initialize state to empty arr
@@ -14,7 +15,7 @@ function Marketplace(props) {
   };
 
   // api call to get and display gun skin
-  useEffect(() => {
+  const getSkins = () => {
     fetch("https://valorant-api.com/v1/weapons/skins")
       .then((res) => {
         return res.json();
@@ -22,7 +23,7 @@ function Marketplace(props) {
       .then((data) => {
         const dataArr = data["data"];
         // randomize 20 indices
-        const randomIndices = randIndices(20);
+        const randomIndices = randIndices(50);
         const newSkinArr = [];
         randomIndices.forEach((i) => {
           if (typeof dataArr[i]["displayIcon"] !== null) {
@@ -31,14 +32,30 @@ function Marketplace(props) {
         });
         // console.log(newSkinArr);
         setSkinArr(newSkinArr);
+
+        // Loading effect*********
+        // setTimeout(() => {
+        //   setSkinArr(newSkinArr);
+        // }, 1000);
       })
       .catch((err) => console.log(err));
+  };
+
+  // useEffect to rerender the marketplace component on state change
+  useEffect(() => {}, [skinArr]);
+
+  //this useEffect runs once, and runs on first render
+  useEffect(() => {
+    getSkins();
   }, []);
 
   return (
     <div className="marketplace">
-      <div id="marketplaceh2div">
+      <div className="header">
         <h2>Marketplace</h2>
+        <div id="refresh-div">
+          <img id="refresh" onClick={() => getSkins()} src={refresh}></img>
+        </div>
       </div>
       <div className="display">
         {skinArr.map((obj) => (

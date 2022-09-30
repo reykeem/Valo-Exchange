@@ -49,3 +49,21 @@
 #login-link {
   margin-right: 20px;
 }
+
+.logged-in {
+  color: aliceblue;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  outline: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  /* font-size: 22px; */
+  /* font-weight: 400; */
+  color: #fff;
+  text-align: center;
+  line-height: normal;
+  background: linear-gradient(90deg, #5522fa 0, #0074e4 100%);
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}

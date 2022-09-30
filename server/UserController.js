@@ -1,9 +1,14 @@
 const User = require("./usersModel");
 
+const getKeyOfObj = (nestedObj) => {
+  return JSON.parse(Object.keys(nestedObj)[0]);
+};
+
 const UserController = {
   createUser(req, res) {
-    console.log("req.body:", req.body);
-    User.create(req.body)
+    const body = getKeyOfObj(req.body);
+    console.log("req.body:", body);
+    User.create(body)
       .then((data) => {
         console.log(data);
         res.status(200).json(data);
@@ -45,15 +50,21 @@ const UserController = {
         console.log(`ERROR: ${err} in userController.deleteUser`);
       });
   },
-  verifyUser(req, res) {
-    User.findOne({ username: req.body.username })
+  verifyUser(req, res, next) {
+    // console.log("req.body in verifyUser: ", req.body);
+    const body = getKeyOfObj(req.body);
+    console.log(body.username);
+    User.findOne({ username: body.username })
       .then((data) => {
-        if (data.password === req.body.password) {
+        console.log(data);
+        if (data.password === body.password) {
           console.log("Logged In");
-          res.json("Successful Log In");
+          //   res.json("Successful Log In");
+          return next();
         } else {
           console.log("Incorrect Username/Password");
-          res.json("Incorrect Username/Password");
+          //   res.json("Incorrect Username/Password");
+          return next();
         }
       })
       .catch((err) => {

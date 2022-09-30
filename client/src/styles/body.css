@@ -140,17 +140,54 @@ a {
   position: fixed;
   /* box-shadow: 0px 8px 32px 8px rgba(0, 0, 0, 0.35); */
   color: aliceblue;
+  background-image: url("../assets/raze-gif.gif");
+  padding: 20px;
 }
 
 .user-inputs {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: left;
+}
+
+.user-inputs span {
+  margin-bottom: 50px;
+  margin-left: 450px;
+  margin-top: 20px;
 }
 
 #login-btn {
   width: 180px;
   height: 80px;
+  margin-left: 480px;
+  height: 100px;
+  display: inline-block;
+  outline: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 15px 22px;
+  font-size: 22px;
+  height: 50px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  line-height: normal;
+  background: linear-gradient(90deg, #5522fa 0, #0074e4 100%);
+  border-radius: 50px;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#raze {
+  height: 30%;
+  width: 50%;
+  margin-left: 300px;
+  margin-top: 20px;
+}
+
+#welcome {
+  font-size: 30px;
 }
 
 /* SignUp Popup Styles */
@@ -167,9 +204,7 @@ a {
   text-align: center;
   position: fixed;
   color: aliceblue;
+  display: flex;
+  flex-direction: column;
 }
 
-#signup-btn {
-  width: 180px;
-  height: 80px;
-}

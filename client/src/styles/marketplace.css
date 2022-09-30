@@ -13,10 +13,33 @@
   font-size: 2.2rem;
 }
 
-
-
 .display {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+#refresh-div {
+  text-align: left;
+  margin-left: 120px;
+  margin-bottom: 20px;
+}
+
+#refresh {
+  /* color: aliceblue; */
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 00.7s;
+  -o-transition: 0.7s;
+  filter: invert(100%) sepia(6%) saturate(24%) hue-rotate(146deg)
+    brightness(107%) contrast(107%);
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#refresh:hover {
+  transform: rotate(360deg);
+  cursor: pointer;
 }
